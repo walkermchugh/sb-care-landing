@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SafeBeat Care | Therapeutic Cardiac Monitoring</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f6f8fa;
+        --surface: #ffffff;
+        --line: #e6ecf1;
+        --text: #1e2a36;
+        --muted: #5c6a77;
+        --primary: #0a7a78;
+        --primary-ink: #ffffff;
+        --secondary: #0e2337;
+        --accent: #d29a2e;
+        --success: #1f8a4c;
+        --radius: 12px;
+        --shadow: 0 16px 40px rgba(14, 35, 55, 0.08);
+        --max: 1160px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 10% -10%, rgba(10, 122, 120, 0.18), transparent 40%),
+          radial-gradient(circle at 95% 10%, rgba(210, 154, 46, 0.16), transparent 45%),
+          var(--bg);
+        line-height: 1.5;
+      }
+
+      .container {
+        width: min(var(--max), 92vw);
+        margin: 0 auto;
+      }
+
+      header {
+        padding: 24px 0 10px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.82);
+        backdrop-filter: blur(6px);
+        border-radius: 999px;
+        padding: 8px 10px 8px 18px;
+      }
+
+      .brand {
+        font-family: "Sora", sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--secondary);
+      }
+
+      .pill {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .btn {
+        border: 0;
+        border-radius: 999px;
+        padding: 10px 16px;
+        font: 600 14px/1 "Plus Jakarta Sans", sans-serif;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: var(--primary-ink);
+        box-shadow: 0 8px 20px rgba(10, 122, 120, 0.26);
+      }
+
+      .btn-secondary {
+        background: var(--surface);
+        color: var(--secondary);
+        border: 1px solid var(--line);
+      }
+
+      .hero {
+        padding: 44px 0 28px;
+      }
+
+      .hero-grid {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Sora", sans-serif;
+        margin: 0;
+        color: var(--secondary);
+      }
+
+      h1 {
+        font-size: clamp(32px, 5.2vw, 56px);
+        line-height: 1.05;
+        margin-bottom: 14px;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .lede {
+        font-size: clamp(17px, 2vw, 20px);
+        color: #304051;
+        max-width: 58ch;
+      }
+
+      .cta-row {
+        margin-top: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .micro {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .hero-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero-card h3 {
+        font-size: 16px;
+      }
+
+      .stat {
+        margin-top: 14px;
+        border-top: 1px solid var(--line);
+        padding-top: 14px;
+      }
+
+      .stat label {
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+        font-family: "IBM Plex Mono", monospace;
+      }
+
+      .stat strong {
+        font-size: 22px;
+        color: var(--secondary);
+      }
+
+      .section {
+        padding: 34px 0;
+      }
+
+      .surface {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 28px;
+      }
+
+      .section h2 {
+        font-size: clamp(24px, 3vw, 34px);
+      }
+
+      .sub {
+        margin-top: 10px;
+        color: var(--muted);
+        max-width: 64ch;
+      }
+
+      .steps {
+        margin-top: 22px;
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .step {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 16px;
+        background: #fbfcfd;
+      }
+
+      .step small {
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--primary);
+      }
+
+      .roles {
+        margin-top: 22px;
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      ul {
+        margin: 12px 0 0;
+        padding-left: 18px;
+      }
+
+      li + li {
+        margin-top: 8px;
+      }
+
+      .compliance-note {
+        margin-top: 16px;
+        padding: 14px;
+        border-left: 4px solid var(--accent);
+        background: #fffaf1;
+        color: #5c4521;
+      }
+
+      .faq {
+        margin-top: 20px;
+        display: grid;
+        gap: 10px;
+      }
+
+      details {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: #fbfcfd;
+        padding: 12px 14px;
+      }
+
+      summary {
+        font-weight: 600;
+        cursor: pointer;
+        color: var(--secondary);
+      }
+
+      footer {
+        margin-top: 24px;
+        padding: 26px 0 44px;
+      }
+
+      .footer-panel {
+        border-top: 1px solid var(--line);
+        padding-top: 18px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .footer-panel p + p {
+        margin-top: 6px;
+      }
+
+      @media (max-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .steps,
+        .roles {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container">
+      <div class="nav">
+        <div class="brand">SafeBeat Care</div>
+        <div class="pill">Therapeutic Monitoring Workflow</div>
+        <a class="btn btn-primary" href="#demo">Schedule Clinical + Operations Demo</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <div class="hero-grid">
+          <div>
+            <h1>Therapeutic Cardiac Monitoring for Antiarrhythmic Care</h1>
+            <p class="lede">
+              SafeBeat Care helps cardiology teams run structured home-based monitoring workflows for eligible patients,
+              with defined escalation and documentation support.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#demo">Schedule Clinical + Operations Demo</a>
+              <a class="btn btn-secondary" href="#evidence">Download Protocol Overview</a>
+            </div>
+            <p class="micro">SafeBeat Care supports clinical workflow and does not replace physician judgment.</p>
+          </div>
+          <aside class="hero-card">
+            <h3>Why teams adopt this model</h3>
+            <div class="stat">
+              <label>Goal</label>
+              <strong>Structured outpatient pathway support</strong>
+            </div>
+            <div class="stat">
+              <label>Built for</label>
+              <strong>Protocolized monitoring + escalation</strong>
+            </div>
+            <div class="stat">
+              <label>Deployment focus</label>
+              <strong>Clinical + operations alignment</strong>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section container">
+        <div class="surface">
+          <h2>Care pathway pressure is clinical and operational</h2>
+          <p class="sub">
+            Antiarrhythmic pathways can require high-touch monitoring and coordination. Inpatient-first workflows can
+            constrain capacity and increase team burden. SafeBeat Care is designed to support selected outpatient protocols
+            under clinician oversight.
+          </p>
+          <div class="steps">
+            <article class="step">
+              <small>Step 01</small>
+              <h3>Identify eligible patients</h3>
+              <p>Use site-defined criteria and clinician judgment to select candidates.</p>
+            </article>
+            <article class="step">
+              <small>Step 02</small>
+              <h3>Enroll into protocol</h3>
+              <p>Configure monitoring cadence and escalation thresholds with your team.</p>
+            </article>
+            <article class="step">
+              <small>Step 03</small>
+              <h3>Monitor and escalate</h3>
+              <p>Review ECG/QT data with defined rules and human clinical oversight.</p>
+            </article>
+            <article class="step">
+              <small>Step 04</small>
+              <h3>Document and decide</h3>
+              <p>Final treatment decisions remain with the treating clinician.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" id="evidence">
+        <div class="surface">
+          <h2>Built for both clinical teams and operations leaders</h2>
+          <div class="roles">
+            <article class="step">
+              <h3>For EP and Cardiology Teams</h3>
+              <ul>
+                <li>Structured monitoring workflow support for antiarrhythmic pathways.</li>
+                <li>Escalation support designed to reduce avoidable workflow interruption.</li>
+                <li>Protocol artifacts that keep teams aligned.</li>
+              </ul>
+            </article>
+            <article class="step">
+              <h3>For Practice and Network Leaders</h3>
+              <ul>
+                <li>Designed to support access expansion with operational control.</li>
+                <li>Implementation planning across staffing, protocol, and reporting.</li>
+                <li>Documentation support aligned with real-world billing workflows.</li>
+              </ul>
+            </article>
+          </div>
+          <div class="compliance-note">
+            Regulatory and clinical claims should use counsel-approved language only. Replace placeholder trust lines
+            with reviewed statements before publish.
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" id="demo">
+        <div class="surface">
+          <h2>Frequently asked buyer questions</h2>
+          <div class="faq">
+            <details>
+              <summary>Does this replace physician decision-making?</summary>
+              <p>No. SafeBeat Care supports workflow and monitoring. Clinical decisions remain with the treating clinician.</p>
+            </details>
+            <details>
+              <summary>Is this appropriate for all patients?</summary>
+              <p>No. Use depends on patient eligibility criteria, site protocols, and clinician judgment.</p>
+            </details>
+            <details>
+              <summary>Are outcomes or reimbursement guaranteed?</summary>
+              <p>No. Outcomes and reimbursement vary by patient profile, payer policy, documentation, and implementation quality.</p>
+            </details>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#">Schedule Clinical + Operations Demo</a>
+            <a class="btn btn-secondary" href="#">Download Protocol Overview</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container">
+      <div class="footer-panel">
+        <p>SafeBeat Care is intended for use within approved indications and site protocols.</p>
+        <p>Not for emergency use. In an emergency, call 911.</p>
+        <p>Product and service availability may vary by region and contract status.</p>
+      </div>
+    </footer>
+  </body>
+</html>
