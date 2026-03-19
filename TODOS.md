@@ -2,18 +2,6 @@
 
 ## Review
 
-### Add claims review checklist gate before publish
-
-**What:** Create and require a `CLAIMS_REVIEW_CHECKLIST.md` before any landing-page publish.
-
-**Why:** Prevent inconsistent manual legal/regulatory review and reduce claim drift risk.
-
-**Context:** Current plan keeps manual ad hoc claims review (`2.4B`) while the page includes regulated claim areas; this introduces preventable release risk.
-
-**Effort:** S
-**Priority:** P1
-**Depends on:** None
-
 ### Enforce PHI/clinical-text blocking in intake
 
 **What:** Add server-side and client-side validation that blocks patient-identifying or clinical-detail free-text submissions.
@@ -38,5 +26,28 @@
 **Priority:** P2
 **Depends on:** Queue and sync status fields available
 
+### Replace temporary landing-page CTA placeholders before publish
+
+**What:** Replace `href="#"` and in-page placeholder CTA links in `index.html` with real destinations for demo booking and protocol overview download.
+
+**Why:** Ensure CTA behavior matches user expectations and avoids non-functional conversion actions in production.
+
+**Context:** Current links are intentionally temporary placeholders and were accepted during review; this must be completed before launch.
+
+**Effort:** S
+**Priority:** P1
+**Depends on:** Final demo URL and approved protocol overview asset URL
+
 ## Completed
 
+### Add claims review checklist gate before publish
+
+**What:** Created and added required `CLAIMS_REVIEW_CHECKLIST.md` for pre-publish claim review.
+
+**Why:** Prevent inconsistent manual legal/regulatory review and reduce claim drift risk.
+
+**Context:** Moves claim review from ad hoc process to a required release gate.
+
+**Effort:** S
+**Priority:** P1
+**Depends on:** None
