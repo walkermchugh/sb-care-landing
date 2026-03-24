@@ -1,0 +1,5 @@
+# Local runtime/session artifacts
+.gstack/
+
+# Accidental nested clone / repo-in-repo
+sb-care-landing/
